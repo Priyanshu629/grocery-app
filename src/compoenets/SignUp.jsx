@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { LuLogIn } from "react-icons/lu";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaRegEyeSlash, FaEye } from "react-icons/fa";
 import { useFormik } from 'formik';
 import { signUpSchema } from '../validationSchemas/signUpSchema';
@@ -10,7 +10,8 @@ const SignUp = () => {
 
     const [passShow, setPassShow] = useState(false)
     const [confirPassShow, setConfirmPassShow] = useState(false)
-
+    const [signUpMsg, setSignUpMsg] = useState("")
+    const navigate= useNavigate()
 
 
     const initialValues = {
@@ -25,7 +26,11 @@ const SignUp = () => {
         validateOnBlur: true,
         validateOnChange: true,
         onSubmit: (values, action) => {
-            console.log(values)
+            setSignUpMsg("Registered Successfully")
+            setTimeout(() => {
+
+                navigate("/");
+            }, 3000);
             action.resetForm()
         }
     })
@@ -34,6 +39,8 @@ const SignUp = () => {
         <div className='w-[100%] my-[5%]'>
             <form onSubmit={handleSubmit} className='bg-amber-300 max-sm:w-[90%] lg:w-[40%] md:w-[50%]  mx-auto my-4 p-3 rounded-md  max-sm:my-[30%]  max-md:my-[20%] md:my-[7%]'>
                 <h1 className='text-center text-xl font-bold my-2 bg-purple-300 p-2 rounded-sm '>Register YourSelf</h1>
+
+                {signUpMsg && <p className='text-green-700 text-lg text-center font-semibold'>{signUpMsg}</p>}
 
                 {/* Email Field*/}
 

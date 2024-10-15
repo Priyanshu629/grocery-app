@@ -11,10 +11,10 @@ import { useUser } from '../context/userContext';
 const Login = () => {
     const { setIsLoggedIn, setUser } = useUser()
     const navigate = useNavigate()
-    const loginRef = useRef()
+
 
     const [passShow, setPassShow] = useState(false)
-    const [loginMsg,setLoginMsg]=useState("")
+    const [loginMsg, setLoginMsg] = useState("")
 
 
 
@@ -31,7 +31,7 @@ const Login = () => {
         onSubmit: (values, action) => {
             setUser(values.username)
             setIsLoggedIn(true)
-            // loginRef.current.innerText = "Logging In..."
+
             setLoginMsg("Login Successfull Redirecting to Home")
             setTimeout(() => {
 
@@ -47,7 +47,7 @@ const Login = () => {
         <div className='w-[100%] my-[5%]'>
             <form onSubmit={handleSubmit} className='bg-gray-300 w-[95%] sm:w-[40%]  mx-auto my-6 p-3 rounded-md max-sm:my-[30%] sm:my-[8%]  '>
                 <h1 className='text-center text-xl font-bold my-3 bg-purple-400 p-2 rounded-sm italic'>Login to Your Account</h1>
-               {loginMsg && <p className='text-green-700 text-lg text-center font-semibold'>{loginMsg}</p>}
+                {loginMsg && <p className='text-green-700 text-lg text-center font-semibold'>{loginMsg}</p>}
                 {/* Username or Email Field */}
                 <div className='flex flex-col my-2'>
 
@@ -86,7 +86,7 @@ const Login = () => {
                 </div>
 
 
-                <button ref={loginRef} className='hover:bg-green-600 hover:text-white w-[90%] sm:w-[50%] p-1 bg-green-400 rounded-md  font-bold text-lg border-2 border-green-900 mx-auto block my-3 ' type='submit'>Login <LuLogIn className='inline-block text-xl text-pink-600 ' /></button>
+                <button className='hover:bg-green-600 hover:text-white w-[90%] sm:w-[50%] p-1 bg-green-400 rounded-md  font-bold text-lg border-2 border-green-900 mx-auto block my-3 ' type='submit'>Login <LuLogIn className='inline-block text-xl text-pink-600 ' /></button>
 
                 <div className='my-2  flex justify-between items-center flex-wrap-reverse font-semibold'>
                     <p>Do not Have An Account ? <Link
