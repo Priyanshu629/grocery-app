@@ -45,9 +45,9 @@ const Login = () => {
 
     return (
         <div className='w-[100%] my-[5%]'>
-            <form onSubmit={handleSubmit} className='bg-gray-400 w-[95%] sm:w-[40%]  mx-auto my-6 p-3 rounded-md max-sm:my-[30%] sm:my-[8%]  '>
-                <h1 className='text-center text-xl font-bold my-3 bg-purple-300 p-2 rounded-sm italic'>Login to Your Account</h1>
-               {loginMsg && <p className='text-white text-center font-semibold'>{loginMsg}</p>}
+            <form onSubmit={handleSubmit} className='bg-gray-300 w-[95%] sm:w-[40%]  mx-auto my-6 p-3 rounded-md max-sm:my-[30%] sm:my-[8%]  '>
+                <h1 className='text-center text-xl font-bold my-3 bg-purple-400 p-2 rounded-sm italic'>Login to Your Account</h1>
+               {loginMsg && <p className='text-green-700 text-lg text-center font-semibold'>{loginMsg}</p>}
                 {/* Username or Email Field */}
                 <div className='flex flex-col my-2'>
 
@@ -61,7 +61,7 @@ const Login = () => {
 
                         className='w-[90%] p-2 border-2 rounded-md border-pink-500' id='username' type="text" name="username" placeholder='username' />
                     {touched.username && errors.username ? (
-                        <p className="my-2 text-sm text-red-800 italic font-semibold">{errors.username}</p>
+                        <p className="my-2 text-sm text-yellow-800 italic font-semibold">{errors.username}</p>
                     ) : null}
                 </div>
 
@@ -81,7 +81,7 @@ const Login = () => {
                         }
                     </div>
                     {touched.password && errors.password ? (
-                        <p className="my-2 text-sm text-red-800 italic font-semibold">{errors.password}</p>
+                        <p className="my-2 text-sm text-yellow-800 italic font-semibold">{errors.password}</p>
                     ) : null}
                 </div>
 
