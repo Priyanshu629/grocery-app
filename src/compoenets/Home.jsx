@@ -15,6 +15,7 @@ const Home = () => {
     return (
         <main className='w-[75%] max-md:w-[95%] max-md:mx-auto  md:ml-[25%] my-[40%] md:my-[10%] text-center'>
             <h1 className='font-bold text-4xl '>Hello  {user}</h1>
+            <p>This is a Grocery Application</p>
         </main>
 
     )
