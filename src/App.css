@@ -1,0 +1,12 @@
+.active {
+  background: whitesmoke;
+  color: black;
+}
+
+.open {
+  left: 0;
+  /* Set width according to your layout */
+  height: 100%; /* Use 100% for full height */
+  transition: left 0.3s ease-in-out; /* Reduced transition time for a quicker response */
+  
+}
